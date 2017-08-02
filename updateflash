@@ -1,0 +1,20 @@
+#! /bin/bash
+
+# This shell is used to update flashplayer
+# File should be placed in ~/Downloads directory
+
+cd /home/mcloudyp/Downloads
+if [ ! -e flash_player_npapi_linux.x86_64.tar.gz ] 
+then
+	echo "File not exist!"
+	echo "Please download the file and run this script again."
+	exit 1
+fi
+tar -xvf flash_player_npapi_linux.x86_64.tar.gz
+echo "Extract complated!"
+cp -r usr/* /usr
+echo "Copy usr/ directory complated!"
+mv libflashplayer.so /home/mcloudyp/.mozilla/plugins/
+echo "Move libflashplayer.so file complated!"
+rm -r LGPL license.pdf readme.txt usr
+echo "Clean files complated!"

@@ -1,0 +1,11 @@
+#! /bin/bash
+#This script is used to open web browser
+
+read -p "Please input website you want to go: " web
+if [ -z $web ]
+then
+	firefox www.baidu.com > /dev/null 2>&1 &
+else
+	firefox $web > /dev/null 2>&1 &
+fi
+exit 0
